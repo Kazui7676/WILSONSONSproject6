@@ -7,18 +7,10 @@
     "NODE_ENV": "production"
   },
   "functions": {
-    "api/index.ts": {
-      "runtime": "@vercel/node@5"
-    }
+    "api/index.ts": { "runtime": "@vercel/node@5" }
   },
   "rewrites": [
-    {
-      "source": "/api/:path*",
-      "destination": "/api/index.ts"
-    },
-    {
-      "source": "/:path*",
-      "destination": "/index.html"
-    }
+    { "source": "/api/:path*", "destination": "/api/index.ts" },
+    { "source": "/:path*", "destination": "/index.html" }
   ]
 }
