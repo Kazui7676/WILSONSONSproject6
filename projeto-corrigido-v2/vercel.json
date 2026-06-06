@@ -1,0 +1,24 @@
+{
+  "buildCommand": "pnpm run build:client",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "outputDirectory": "dist/spa",
+  "nodeVersion": "20.x",
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "api/index.ts": {
+      "runtime": "@vercel/node@5"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api/index.ts"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/index.html"
+    }
+  ]
+}
